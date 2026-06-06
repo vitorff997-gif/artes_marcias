@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ARTES MARCIAIS — Guia Completo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Barlow+Condensed:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <a class="header-logo" onclick="navHome()">
+      <span class="logo-symbol">⬡</span>
+      <span class="logo-text">ARTES<span>MARCIAIS</span></span>
+    </a>
+
+    <div class="header-search">
+      <span class="search-icon">⌕</span>
+      <input id="search-input" type="text" placeholder="Buscar arte marcial, estilo, origem..."/>
+    </div>
+
+    <nav class="header-nav">
+      <button class="nav-btn active" onclick="navHome()">Início</button>
+      <button class="nav-btn" onclick="navArtes()">Explorar</button>
+    </nav>
+
+    <button class="menu-mobile" onclick="toggleMobileMenu()">☰</button>
+  </header>
+
+  <!-- MOBILE SEARCH -->
+  <div class="mobile-search" id="mobile-search" style="display:none; gap:10px; align-items:center; background:var(--bg2); border-bottom:1px solid var(--border); padding:12px 20px; position:sticky; top:64px; z-index:79;">
+    <span style="color:var(--text3); flex-shrink:0;">⌕</span>
+    <input id="search-mobile" type="text" placeholder="Buscar..."
+      style="background:none; border:none; outline:none; color:var(--text); font-family:var(--font-body); font-size:0.9rem; width:100%;"/>
+  </div>
+
+  <!-- HOME PAGE -->
+  <div id="home-page">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-bg"></div>
+      <div class="hero-content">
+        <p class="hero-eyebrow">Guia Completo · Novo Testamento das Lutas</p>
+        <h1 class="hero-title">
+          ARTES
+          <span class="line2">MARCIAIS</span>
+        </h1>
+        <p class="hero-subtitle">
+          Conheça as principais artes marciais e lutas do mundo —
+          origem, história, graduação, campeonatos e para qual perfil de pessoa cada uma é ideal.
+        </p>
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <div class="hero-stat-num">12</div>
+            <div class="hero-stat-label">Artes Marciais</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-num">6</div>
+            <div class="hero-stat-label">Estilos de Karatê</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-num">+50</div>
+            <div class="hero-stat-label">Curiosidades</div>
+          </div>
+        </div>
+        <button class="hero-cta" id="btn-ver-artes">
+          Explorar Artes Marciais →
+        </button>
+      </div>
+    </section>
+
+    <!-- FILTROS -->
+    <div class="filters-section">
+      <div class="filters-wrap">
+        <button class="filter-pill active" data-tipo="todos" onclick="setFiltro('todos')">Todas</button>
+        <button class="filter-pill" data-tipo="striking" onclick="setFiltro('striking')">Striking / Pancadaria</button>
+        <button class="filter-pill" data-tipo="grappling" onclick="setFiltro('grappling')">Grappling / Agarre</button>
+        <button class="filter-pill" data-tipo="misto" onclick="setFiltro('misto')">Mistas</button>
+        <button class="filter-pill" data-tipo="defesa pessoal" onclick="setFiltro('defesa pessoal')">Defesa Pessoal</button>
+      </div>
+    </div>
+
+    <!-- CARDS -->
+    <section class="cards-section" id="cards-section">
+      <div class="section-header">
+        <h2 class="section-title">EXPLORAR</h2>
+        <span class="section-count" id="cards-count">12 artes encontradas</span>
+      </div>
+      <div class="cards-grid" id="cards-grid"></div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-logo">ARTES<span>MARCIAIS</span></div>
+      <p>Guia educativo sobre as principais artes marciais e lutas do mundo.<br/>
+      Informações para fins educacionais e culturais.</p>
+    </footer>
+
+  </div>
+
+  <!-- DETALHE PAGE -->
+  <div id="detalhe-page"></div>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
